@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block nav %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row" style="margin: 20pt; height: auto;">
+            <div class="col-lg-6">
+                <form id="essayForm" action="/essay" method="POST">
+                    <div class="form-outline" style="position: relative;">
+                        <textarea onkeyup="checkEssay()" class="textarea form-control" id="essayInput" name="essayInput" rows="30" style="resize: none; padding: 20pt; margin-top: 20pt; border-radius: 0; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.511); position: relative;" placeholder="Ctrl+V or paste your text here...">{{article}}</textarea>
+                        <div class="check" style="position: absolute;"> <button disabled class="essay-submit-button" type="submit" style="background-color:gray; color: #fff; padding: 10px 25px; border: none; border-radius: 10px;">Check</button></div>
+                    </div>
+                </form>
+            </div>
+            <div class="col" style="margin-top: 30pt; margin-left: 10px;">
+                <div class="row row-cols-1" style="height: 100%;">
+                    <div class="col-12" style="height: 400px;">
+                        <div class="text" style="width: 95%; display: block;">
+                            <h2 style="text-align: left; margin-right: 100px; float: left;">Focus & Purpose</h2>
+                            <h2 style="float: right; width: 30%; text-align: right;">{{score1}}</h2>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div class="progress" style="height: 40px; margin: 5px 0 20px; border-radius: 30px; border: solid 1px #446FA0;">
+                            <div class="progress-bar" role="progressbar" style="width: calc(({{score1}}/6)*100%); height: 40px; background-color: #446FA0; border-radius: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="text">
+                            <!-- <h3 style="font-size: 20px;  color: rgb(75, 75, 75); margin: 0 5px;">Description</h3> -->
+                            <p style="font-size: 16px; color: #51555B; margin: -3px 5px 0 5px;">{{desc1}}</p>
+                        </div>
+                    </div>
+                    <div class="col-12" style="height: 400px;">
+                        <div class="text" style="width: 95%; display: block;">
+                            <h2 style="text-align: left; margin-right: 90px; float: left;">Ideas & Development</h2>
+                            <h2 style="float: right; width: 30%; text-align: right;">{{score2}}</h2>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div class="progress" style="height: 40px; margin: 5px 0 20px; border-radius: 30px; border: solid 1px #446FA0;">
+                            <div class="progress-bar" role="progressbar" style="width: calc(({{score2}}/6)*100%); height: 40px; background-color: #446FA0; border-radius: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="text">
+                            <!-- <h3 style="font-size: 20px;  color: rgb(75, 75, 75); margin: 0 5px;">Description</h3> -->
+                            <p style="font-size: 16px; color: #51555B; margin: -3px 5px 0 5px;">{{desc2}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='essayValidation.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Essays</title>
+</head>
+<body>
+    <h2>Inputted Essays</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>UserID</th>
+                <th>Time</th>
+                <th>Content</th>
+                <th>Score FnP</th>
+                <th>Score InD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for essay in essays %}
+                <tr>
+                    <td>{{ essay[0] }}</td>
+                    <td>{{ essay[1] }}</td>
+                    <td>{{ essay[2] }}</td>
+                    <td>{{ essay[3] }}</td>
+                    <td>{{ essay[4] }}</td>
+                    <td>{{ essay[5] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

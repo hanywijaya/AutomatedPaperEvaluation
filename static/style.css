@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-color: #D6DDE0;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+}
+
+h2, h3{
+    font-weight: 600;
+}
+
+h4 {
+    text-align: left;
+    color: #f8f8f8;
+}
+
+footer {
+    margin: 5px;
+    padding: 5px;
+    color: #f8f8f8;
+}
+
+.desc {
+    color: #f8f8f8;
+    margin: 10px;
+}
+
+.truncate-line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical; 
+    height: 12em;
+    overflow: hidden;
+  }
+
+.ghost-backdrop{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.345);
+}
+
+.ghost-backdrop.show{
+    display: block;
+}
+
+.animated-hamburger{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.animated-hamburger span{
+    background-color: whitesmoke;
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.animated-hamburger span:nth-child(1) {
+    top: 0px;
+}
+   
+.animated-hamburger span:nth-child(2) {
+    top: 10px;
+}
+   
+.animated-hamburger span:nth-child(3) {
+    top: 20px;
+}
+
+.animated-hamburger.open span:nth-child(1) {
+    top: 11px;
+    background-color: #344B87;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.animated-hamburger.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.animated-hamburger.open span:nth-child(3) {
+    top: 11px;
+    background-color: #344B87;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.sidebar.collapse{
+    display: block;
+    width: 0;
+    transition: width 1s ease;
+}
+
+.sidebar.collapse.show{
+    width: 400px;
+    z-index: 1;
+}
+
+.textarea:focus{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.511);
+}
+
+#editProfile:hover{
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color :#446FA0;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+.check{
+    position:absolute;
+	width:60px;
+	height:60px;
+	bottom:10px;
+	right:55px;
+	text-align:center;
+}
+
+.navbar-link, .login-register-links{
+    font-style: italic;
+    color: black;
+    transition: 1s;
+
+}
+
+.navbar-link:hover{
+    padding-right: 30px;
+    transition: 1s;
+}
+
+.changepass p{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.changepass:hover p{
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+}
+
+
+.login-register-links:hover{
+    color: lightskyblue;
+    transition: 0.3s;
+}
